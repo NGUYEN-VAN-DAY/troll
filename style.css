@@ -1,13 +1,23 @@
-body {
+* {
     margin: 0;
-    height: 100vh;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #111;
+    overflow: hidden;
+}
+
+.marquee {
+    width: 100%;
+    height: 100px;
 
     display: flex;
-    justify-content: center;
     align-items: center;
 
-    background: linear-gradient(135deg, #141e30, #243b55);
-    font-family: Arial, sans-serif;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .text {
@@ -15,27 +25,20 @@ body {
     font-weight: bold;
     color: white;
 
-    padding: 30px 50px;
-    border-radius: 20px;
-
-    background: rgba(255, 255, 255, 0.1);
-
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-
     text-shadow:
         0 0 10px #00eaff,
         0 0 20px #00eaff,
         0 0 40px #00eaff;
 
-    animation: glow 1.5s infinite alternate;
+    animation: chay 5s linear infinite;
 }
 
-@keyframes glow {
+@keyframes chay {
     from {
-        transform: scale(1);
+        transform: translateX(100vw);
     }
 
     to {
-        transform: scale(1.05);
+        transform: translateX(-100%);
     }
 }
